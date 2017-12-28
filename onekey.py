@@ -60,7 +60,7 @@ class OneKey:
             retval = [x for x in self.key_dict.keys()]
 
         else:
-            retval = [x for x in self.key_dict.keys() if arg.lower() in x]
+            retval = [x for x in self.key_dict.keys() if arg in x]
 
         return retval
 
@@ -116,7 +116,7 @@ def main():
         command = input_arr[0]
         arg = None
         if len(input_arr) > 1:
-            arg = input_arr[1]
+            arg = input_arr[1].lower()
 
         if command == "list":
             key_list = ok.command_list(arg)
@@ -126,14 +126,12 @@ def main():
 
         elif command == "add":
             if len(input_arr) > 1:
-                key = input_arr[1]
                 value = getpass.getpass()
-                ok.command_add(key, value)
+                ok.command_add(arg, value)
 
         elif command == "view":
             if len(input_arr) > 1:
-                key = input_arr[1]
-                value = ok.command_view(key)
+                value = ok.command_view(arg)
                 print()
                 print(value)
 
@@ -142,6 +140,8 @@ def main():
 
         elif command == "del":
             ok.command_del(arg)
+
+    os.system('cls||clear')
 
 
 if __name__ == "__main__":
