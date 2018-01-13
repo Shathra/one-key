@@ -16,7 +16,7 @@ class OneKeyUnitTest(unittest.TestCase):
         os.remove(filename)
 
     def test_travis(self):
-        self.assertEqual(True, False)
+        self.assertEqual(True, True)
 
     def test_import_file(self):
         onekey = OneKey(key, path=filename)
