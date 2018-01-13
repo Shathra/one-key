@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cf2c8f-39c3-41dd-8ae8-5953fa411d0f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test_onekey.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_onekey.py" afterPath="$PROJECT_DIR$/test/test_onekey.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,9 +19,10 @@
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
-                <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+                <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+                <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
               </folding>
             </state>
           </provider>
@@ -29,8 +31,8 @@
       <file leaf-file-name="onekey.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/onekey.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="1425">
+              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -41,8 +43,8 @@
       <file leaf-file-name="test_onekey.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test_onekey.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="270">
+              <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -90,7 +92,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="width" value="961" />
     <option name="height" value="1053" />
@@ -134,7 +136,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../cs551/project/code" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -149,21 +151,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_onekey.py (1)">
-    <configuration name="Unittests in test_onekey.py (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="one-key" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_onekey.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.test_">
     <configuration name="Unittests in test_onekey.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -176,6 +164,21 @@
       <module name="one-key" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/test_onekey.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration name="Unittests in test_onekey.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="one-key" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_onekey.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python">
@@ -195,14 +198,29 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="test_" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../../cs551/exercise/env/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="one-key" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_onekey.py" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_onekey.py (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.test_" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_onekey.py" />
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_onekey.py (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_onekey.py" />
         <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_onekey.py" />
       </list>
     </recent_temporary>
@@ -224,39 +242,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_onekey_py - 2017.12.28 at 21h 05m 26s.xml">
+    <history-entry file="Unittests_in_test_onekey_py - 2018.01.13 at 16h 25m 00s.xml">
       <configuration name="Unittests in test_onekey.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_onekey_py - 2017.12.28 at 21h 07m 11s.xml">
+    <history-entry file="Unittests_in_test_onekey_py - 2018.01.13 at 16h 26m 34s.xml">
       <configuration name="Unittests in test_onekey.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_onekey_py - 2017.12.28 at 21h 07m 18s.xml">
-      <configuration name="Unittests in test_onekey.py" configurationId="tests" />
+    <history-entry file="Unnamed - 2018.01.13 at 16h 21m 04s.xml">
+      <configuration name="Unnamed" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_onekey_py - 2017.12.28 at 21h 35m 56s.xml">
-      <configuration name="Unittests in test_onekey.py" configurationId="tests" />
+    <history-entry file="test - 2018.01.13 at 16h 22m 00s.xml">
+      <configuration name="test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_onekey_py - 2018.01.13 at 15h 53m 07s.xml">
-      <configuration name="Unittests in test_onekey.py" configurationId="tests" />
+    <history-entry file="test - 2018.01.13 at 16h 23m 21s.xml">
+      <configuration name="test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_onekey_py - 2018.01.13 at 15h 53m 44s.xml">
-      <configuration name="Unittests in test_onekey.py" configurationId="tests" />
+    <history-entry file="test - 2018.01.13 at 16h 24m 15s.xml">
+      <configuration name="test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_onekey_py - 2018.01.13 at 15h 54m 15s.xml">
-      <configuration name="Unittests in test_onekey.py" configurationId="tests" />
+    <history-entry file="test - 2018.01.13 at 16h 26m 37s.xml">
+      <configuration name="test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_onekey_py_(1) - 2018.01.13 at 15h 54m 25s.xml">
-      <configuration name="Unittests in test_onekey.py (1)" configurationId="tests" />
+    <history-entry file="test - 2018.01.13 at 16h 27m 23s.xml">
+      <configuration name="test" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_onekey_py_(1) - 2018.01.13 at 15h 54m 42s.xml">
-      <configuration name="Unittests in test_onekey.py (1)" configurationId="tests" />
+    <history-entry file="test_ - 2018.01.13 at 16h 28m 34s.xml">
+      <configuration name="test_" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_onekey_py_(1) - 2018.01.13 at 15h 54m 47s.xml">
-      <configuration name="Unittests in test_onekey.py (1)" configurationId="tests" />
+    <history-entry file="test_ - 2018.01.13 at 16h 29m 13s.xml">
+      <configuration name="test_" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="1922" height="1053" extended-state="7" />
+    <frame x="960" y="0" width="1922" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -311,7 +329,8 @@
         <state relative-caret-position="105">
           <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding>
-            <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+            <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+            <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -347,7 +366,8 @@
         <state relative-caret-position="105">
           <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding>
-            <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+            <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+            <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -375,7 +395,8 @@
         <state relative-caret-position="105">
           <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding>
-            <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+            <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+            <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -421,7 +442,8 @@
         <state relative-caret-position="75">
           <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+            <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+            <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -454,7 +476,8 @@
         <state relative-caret-position="150">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
-            <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+            <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+            <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -483,7 +506,8 @@
         <state relative-caret-position="105">
           <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding>
-            <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+            <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+            <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -511,7 +535,8 @@
         <state relative-caret-position="105">
           <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding>
-            <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+            <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+            <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -550,7 +575,8 @@
         <state relative-caret-position="75">
           <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+            <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+            <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
@@ -581,24 +607,15 @@
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
-            <marker date="1515847103933" expanded="true" signature="223:252" ph="script: &lt;1 item&gt;" />
+            <marker date="1515849454099" expanded="true" signature="17:35" ph="python: &lt;2 items&gt;" />
+            <marker date="1515849454099" expanded="true" signature="122:151" ph="script: &lt;1 item&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_onekey.py" />
-    <entry file="file://$PROJECT_DIR$/onekey.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/_jb_unittest_runner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -607,10 +624,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/onekey.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_onekey.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        <state relative-caret-position="270">
+          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
