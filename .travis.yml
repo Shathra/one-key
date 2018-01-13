@@ -10,6 +10,6 @@ install:
   - pip install pycrypto
 script:
   - pytest
-  - coverage run test_onekey.pc
+  - coverage run test_onekey.py
 after_success:
   - coveralls
