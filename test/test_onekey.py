@@ -10,7 +10,7 @@ key = "keymust16bytelon"
 class OneKeyUnitTest(unittest.TestCase):
 
     def setUp(self):
-        shutil.copy("test.ts", filename)
+        shutil.copy("test/test.ts", filename)
 
     def tearDown(self):
         os.remove(filename)
