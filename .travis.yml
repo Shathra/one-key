@@ -3,11 +3,13 @@ python:
   - "3.6"
   - "nightly"
 before_install:
-  - pip install pytest pytest-cov
+  - pip install pytest
+  - pip install coverage
   - pip install coveralls
 install:
   - pip install pycrypto
 script:
-  - py.test
+  - pytest
+  - coverage run test_onekey.pc
 after_success:
   - coveralls
