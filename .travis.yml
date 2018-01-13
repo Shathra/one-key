@@ -4,5 +4,8 @@ python:
   - "nightly"
 install:
   - pip install pycrypto
+  - pip install python-coveralls
 script:
   - pytest
+after-success:
+  - coveralls
