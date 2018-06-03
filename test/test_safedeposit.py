@@ -17,11 +17,6 @@ class SafeDepositUnitTest(unittest.TestCase):
         os.remove(filename)
 
     def test_continuous_integration(self):
-        rootDir = '.'
-        for dirName, subdirList, fileList in os.walk(rootDir):
-            print('Found directory: %s' % dirName)
-            for fname in fileList:
-                print('\t%s' % fname)
         self.assertEqual(True, True)
 
     def test_correct_login(self):
