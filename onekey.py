@@ -41,7 +41,7 @@ class SafeDeposit:
         """
         Import an encrypted file with a given key, deserializes it into a dict.
         """
-        is_file_exist = os.path.isfile(_DEFAULT_PATH)
+        is_file_exist = os.path.isfile(self.path)
         if not is_file_exist:
             self.key_dict = dict()
             return
