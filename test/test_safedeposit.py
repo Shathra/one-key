@@ -4,7 +4,7 @@ import shutil
 import os
 
 # Filename contains one record: "key" -> "value"
-filename = "test.psx"
+filename = "test/test.psx"
 key = "testpass"
 
 
@@ -17,6 +17,11 @@ class SafeDepositUnitTest(unittest.TestCase):
         os.remove(filename)
 
     def test_continuous_integration(self):
+        rootDir = '.'
+        for dirName, subdirList, fileList in os.walk(rootDir):
+            print('Found directory: %s' % dirName)
+            for fname in fileList:
+                print('\t%s' % fname)
         self.assertEqual(True, True)
 
     def test_correct_login(self):
