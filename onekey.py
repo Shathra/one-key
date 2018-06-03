@@ -1,18 +1,26 @@
 from Crypto.Cipher import AES
 from Crypto import Random
 import json
+from json.decoder import JSONDecodeError
 import os
 import getpass
 
 _DEFAULT_PATH = "lemonade.psx"
 
 
-class OneKey:
+class SafeDeposit:
+    """
+    Data structure handling password protected file
+    """
 
     def __init__(self, master_key, path=_DEFAULT_PATH):
+        """
+        Throws ValueError if master_key is incorrect
+        """
         self.path = path
         self.key_dict = None
-        self.master_key = master_key
+        self.master_key = SafeDeposit.pad_password(master_key)
+        self._import_file()
 
     def _export_file(self):
         def pad(s):
@@ -29,10 +37,15 @@ class OneKey:
         file.write(content)
         file.close()
 
-    def import_file(self):
+    def _import_file(self):
         """
         Import an encrypted file with a given key, deserializes it into a dict.
         """
+        is_file_exist = os.path.isfile(_DEFAULT_PATH)
+        if not is_file_exist:
+            safe.key_dict = dict()
+            return
+
         def unpad(s):
             s = s[:-ord(s[len(s) - 1:])]
             return s
@@ -48,9 +61,13 @@ class OneKey:
         plain_text = aes.decrypt(cipher_text)
         plain_text = unpad(plain_text)
         plain_text = plain_text.decode("utf-8")
-        self.key_dict = json.loads(plain_text)
 
-    def command_list(self, arg):
+        try:
+            self.key_dict = json.loads(plain_text)
+        except JSONDecodeError:
+            raise ValueError("Password is wrong or file is broken")
+
+    def list(self, arg):
         """
         Returns a list of stored key values.
         :param arg: If none all keys are retrieved, otherwise only keys containing arg will be returned.
@@ -64,7 +81,7 @@ class OneKey:
 
         return retval
 
-    def command_add(self, key, value):
+    def add(self, key, value):
         """
         Add a value with a given key, and store it
         :param key: key to add
@@ -74,7 +91,7 @@ class OneKey:
 
         self._export_file()
 
-    def command_del(self, key):
+    def remove(self, key):
         """
         Deletes a key and store changes.
         :param key: key to delete
@@ -83,7 +100,7 @@ class OneKey:
 
         self._export_file()
 
-    def command_view(self, key):
+    def view(self, key):
         """
         Returns value with given key
         :param key: key
@@ -96,18 +113,44 @@ class OneKey:
 
         return retval
 
+    def change_password(self, new_password):
+        """
+        Exports the file encrypted with given password
+        """
+        new_password = SafeDeposit.pad_password(new_password)
+        self.master_key = new_password
+        self._export_file()
+
+    def pad_password(password):
+        """
+        Returns given password after padding it to make its length 32 bytes long
+        """
+        if len(password) < 32:
+            password = password + "\n" * (32 - len(password))
+
+        return password
+
+
+class CLI:
+
+    def __init__(self, safe):
+        self.safe = safe
+
+    def command(command):
+        pass
+
 
 def main():
 
     key = getpass.getpass("Master Key:")
-    ok = OneKey(key)
 
-    is_file_exist = os.path.isfile(_DEFAULT_PATH)
-    if not is_file_exist:
-        ok.key_dict = dict()
+    try:
+        safe = SafeDeposit(key)
+    except ValueError as err:
+        print(err)
+        exit(-1)
 
-    else:
-        ok.import_file()
+    cli = CLI(safe)
 
     command = None
     while command != "quit":
@@ -119,7 +162,7 @@ def main():
             arg = input_arr[1].lower()
 
         if command == "list":
-            key_list = ok.command_list(arg)
+            key_list = safe.list(arg)
             print()
             for key in key_list:
                 print(key)
@@ -127,11 +170,11 @@ def main():
         elif command == "add":
             if len(input_arr) > 1:
                 value = getpass.getpass()
-                ok.command_add(arg, value)
+                safe.add(arg, value)
 
         elif command == "view":
             if len(input_arr) > 1:
-                value = ok.command_view(arg)
+                value = safe.view(arg)
                 print()
                 print(value)
 
@@ -139,7 +182,10 @@ def main():
             os.system('cls||clear')
 
         elif command == "del":
-            ok.command_del(arg)
+            safe.remove(arg)
+
+        elif command == "change":
+            safe.change_password(arg)
 
     os.system('cls||clear')
 
