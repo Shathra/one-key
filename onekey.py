@@ -43,7 +43,7 @@ class SafeDeposit:
         """
         is_file_exist = os.path.isfile(_DEFAULT_PATH)
         if not is_file_exist:
-            safe.key_dict = dict()
+            self.key_dict = dict()
             return
 
         def unpad(s):
