@@ -1,6 +1,8 @@
 # one-key
 
-![Travis Build](https://travis-ci.org/Shathra/one-key.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/Shathra/one-key/badge.svg?branch=master)](https://coveralls.io/github/Shathra/one-key?branch=master) [![CircleCI](https://circleci.com/gh/Shathra/one-key/tree/master.svg?style=svg)](https://circleci.com/gh/Shathra/one-key/tree/master)
+![Travis Build](https://travis-ci.org/Shathra/one-key.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/Shathra/one-key/badge.svg?branch=master)](https://coveralls.io/github/Shathra/one-key?branch=master)
+
+[![CircleCI](https://circleci.com/gh/Shathra/one-key/tree/master.svg?style=svg)](https://circleci.com/gh/Shathra/one-key/tree/master) [![codecov](https://codecov.io/gh/Shathra/one-key/branch/master/graph/badge.svg)](https://codecov.io/gh/Shathra/one-key)
 
 Command Line Key-Value Storage Application. Stores key-value pairs into a file using AES encryption. Created to practice test driven development.
 
