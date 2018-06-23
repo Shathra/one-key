@@ -19,7 +19,7 @@ class SafeDeposit:
         """
         self.path = path
         self.key_dict = None
-        self.master_key = SafeDeposit.pad_password(master_key)
+        self.master_key = SafeDeposit._pad_password(master_key)
         self._import_file()
 
     def _export_file(self):
@@ -39,7 +39,10 @@ class SafeDeposit:
 
     def _import_file(self):
         """
-        Import an encrypted file with a given key, deserializes it into a dict.
+        Import an encrypted file, specified by self.path, with a given key, deserializes it into a dict.
+        If self.path is not a file, empty dict is created instead.
+
+        Throws ValueError if self.master_key is incorrect
         """
         is_file_exist = os.path.isfile(self.path)
         if not is_file_exist:
@@ -74,7 +77,7 @@ class SafeDeposit:
         :return: list of keys
         """
         if arg is None:
-            retval = [x for x in self.key_dict.keys()]
+            retval = self.key_dict.keys()
 
         else:
             retval = [x for x in self.key_dict.keys() if arg in x]
@@ -117,11 +120,11 @@ class SafeDeposit:
         """
         Exports the file encrypted with given password
         """
-        new_password = SafeDeposit.pad_password(new_password)
+        new_password = SafeDeposit._pad_password(new_password)
         self.master_key = new_password
         self._export_file()
 
-    def pad_password(password):
+    def _pad_password(password):
         """
         Returns given password after padding it to make its length 32 bytes long
         """
@@ -136,8 +139,36 @@ class CLI:
     def __init__(self, safe):
         self.safe = safe
 
-    def command(command):
-        pass
+    def command(self, command_func, arg=None):
+
+        if command_func == "list":
+            key_list = self.safe.list(arg)
+            print()
+            for key in key_list:
+                print(key)
+
+        elif command_func == "add":
+            if arg is not None:
+                value = getpass.getpass()
+                self.safe.add(arg, value)
+
+        elif command_func == "view":
+            if arg is not None:
+                value = self.safe.view(arg)
+                print()
+                print(value)
+
+        elif command_func == "clear":
+            os.system('cls||clear')
+
+        elif command_func == "del":
+            self.safe.remove(arg)
+
+        elif command_func == "change":
+            self.safe.change_password(arg)
+
+    def clear_console(self):
+        os.system('cls||clear')
 
 
 def main():
@@ -161,33 +192,9 @@ def main():
         if len(input_arr) > 1:
             arg = input_arr[1].lower()
 
-        if command == "list":
-            key_list = safe.list(arg)
-            print()
-            for key in key_list:
-                print(key)
+        cli.command(command, arg)
 
-        elif command == "add":
-            if len(input_arr) > 1:
-                value = getpass.getpass()
-                safe.add(arg, value)
-
-        elif command == "view":
-            if len(input_arr) > 1:
-                value = safe.view(arg)
-                print()
-                print(value)
-
-        elif command == "clear":
-            os.system('cls||clear')
-
-        elif command == "del":
-            safe.remove(arg)
-
-        elif command == "change":
-            safe.change_password(arg)
-
-    os.system('cls||clear')
+    cli.clear_console()
 
 
 if __name__ == "__main__":

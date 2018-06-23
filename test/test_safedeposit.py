@@ -104,6 +104,9 @@ class SafeDepositUnitTest(unittest.TestCase):
         except ValueError as err:
             pass
 
+    def test_import_invalid_file(self):
+        safe = SafeDeposit(key, path="notexist.psx")
+        self.assertEqual(safe.key_dict, dict())
 
 if __name__ == '__main__':
     unittest.main()
