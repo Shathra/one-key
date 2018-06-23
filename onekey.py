@@ -24,7 +24,8 @@ class SafeDeposit:
 
     def _export_file(self):
         def pad(s):
-            s = s + (AES.block_size - len(s) % AES.block_size) * chr(AES.block_size - len(s) % AES.block_size)
+            pad_width = AES.block_size - len(s) % AES.block_size
+            s = s + pad_width * chr(pad_width)
             return s
 
         iv = Random.new().read(AES.block_size)
@@ -39,7 +40,8 @@ class SafeDeposit:
 
     def _import_file(self):
         """
-        Import an encrypted file, specified by self.path, with a given key, deserializes it into a dict.
+        Import an encrypted file, specified by self.path,
+        with a given key, deserializes it into a dict.
         If self.path is not a file, empty dict is created instead.
 
         Throws ValueError if self.master_key is incorrect
@@ -73,7 +75,8 @@ class SafeDeposit:
     def list(self, arg):
         """
         Returns a list of stored key values.
-        :param arg: If none all keys are retrieved, otherwise only keys containing arg will be returned.
+        :param arg: If none all keys are retrieved,
+        otherwise only keys containing arg will be returned.
         :return: list of keys
         """
         if arg is None:
@@ -126,7 +129,8 @@ class SafeDeposit:
 
     def _pad_password(password):
         """
-        Returns given password after padding it to make its length 32 bytes long
+        Returns given password after padding it to make its length
+        32 bytes long
         """
         if len(password) < 32:
             password = password + "\n" * (32 - len(password))
