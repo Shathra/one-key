@@ -49,4 +49,4 @@ jobs:
             coverage run -m unittest
             coverage report -m
             codecov
-            pycodestyle
+            pycodestyle *.py
