@@ -199,7 +199,6 @@ class CLI:
                 except pyperclip.PyperclipException:
                     print("Clipboard on the system could not be used")
 
-
     def clear_console(self):
         os.system('cls||clear')
 
