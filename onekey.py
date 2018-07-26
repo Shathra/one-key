@@ -2,8 +2,11 @@ from Crypto.Cipher import AES
 from Crypto import Random
 import json
 from json.decoder import JSONDecodeError
+from threading import Timer
 import os
 import getpass
+
+import pyperclip
 
 _DEFAULT_PATH = "lemonade.psx"
 
@@ -142,6 +145,11 @@ class CLI:
 
     def __init__(self, safe):
         self.safe = safe
+        self.clipboard_content = None
+
+    def _restore_clipboard(self):
+        pyperclip.copy(self.clipboard_content)
+        self.clipboard_content = None
 
     def command(self, command_func, arg=None):
 
@@ -170,6 +178,27 @@ class CLI:
 
         elif command_func == "change" or command_func == "ch":
             self.safe.change_password(arg)
+
+        elif command_func == "copy" or command_func == "cp":
+            if arg is not None:
+                value = self.safe.view(arg)
+                try:
+                    pyperclip.copy(value)
+                except pyperclip.PyperclipException:
+                    print("Clipboard on the system could not be used")
+
+        elif command_func == "copyforget" or command_func == "cpf":
+            if arg is not None:
+                try:
+                    if self.clipboard_content is None:
+                        self.clipboard_content = pyperclip.paste()
+                    value = self.safe.view(arg)
+                    pyperclip.copy(value)
+
+                    Timer(5.0, self._restore_clipboard).start()
+                except pyperclip.PyperclipException:
+                    print("Clipboard on the system could not be used")
+
 
     def clear_console(self):
         os.system('cls||clear')

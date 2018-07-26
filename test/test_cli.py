@@ -8,6 +8,8 @@ import sys
 import onekey
 import getpass
 
+import pyperclip
+
 # Filename contains one record: "key" -> "value"
 filename = "test/test.psx"
 key = "testpass"
@@ -93,3 +95,28 @@ class CLIUnitTest(unittest.TestCase):
 
 		cli.command("ch", "changedpassword")
 		cli.command("cls")
+
+	def test_command_copy(self):
+
+		command_lst = ["cp", "copy", "copyforget", "cpf"]
+
+		def cli_command(command):
+			safe = SafeDeposit(key, path=filename)
+			cli = CLI(safe)
+
+			cli.command(command, "key")
+
+		try:
+			pyperclip.paste()
+		except pyperclip.PyperclipException:
+			# copy-paste not supported, app should not crash
+			for command in command_lst:
+				cli_command(command)
+		else:
+			initial_clipboard_value = pyperclip.paste()
+
+			for command in command_lst:
+				cli_command(command)
+				self.assertEqual("value", pyperclip.paste())
+
+			pyperclip.copy(initial_clipboard_value)
