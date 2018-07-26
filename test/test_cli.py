@@ -40,7 +40,7 @@ class CLIUnitTest(unittest.TestCase):
 		capturedOutput.truncate(0)
 		self.assertIn("key", output)
 
-		cli.command("del", "key")
+		cli.command("delete", "key")
 		cli.command("list")
 		output = capturedOutput.getvalue()
 		capturedOutput.truncate(0)
@@ -60,3 +60,36 @@ class CLIUnitTest(unittest.TestCase):
 
 		cli.command("change", "changedpassword")
 		cli.command("clear")
+
+	def test_command_alias(self):
+		safe = SafeDeposit(key, path=filename)
+		cli = CLI(safe)
+		
+		capturedOutput = io.StringIO()
+		sys.stdout = capturedOutput
+
+		cli.command("ls")
+		output = capturedOutput.getvalue()
+		capturedOutput.truncate(0)
+		self.assertIn("key", output)
+
+		cli.command("del", "key")
+		cli.command("ls")
+		output = capturedOutput.getvalue()
+		capturedOutput.truncate(0)
+		self.assertNotIn("key", output)
+
+		cli.command("add", "arctic")
+		cli.command("list")
+		output = capturedOutput.getvalue()
+		capturedOutput.truncate(0)
+		self.assertIn("arctic", output)
+
+		cli.command("vw", "arctic")
+		output = capturedOutput.getvalue()
+		capturedOutput.truncate(0)
+		self.assertIn("secret", output)
+		sys.stdout = sys.__stdout__
+
+		cli.command("ch", "changedpassword")
+		cli.command("cls")

@@ -145,7 +145,7 @@ class CLI:
 
     def command(self, command_func, arg=None):
 
-        if command_func == "list":
+        if command_func == "list" or command_func == "ls":
             key_list = self.safe.list(arg)
             print()
             for key in key_list:
@@ -156,19 +156,19 @@ class CLI:
                 value = getpass.getpass()
                 self.safe.add(arg, value)
 
-        elif command_func == "view":
+        elif command_func == "view" or command_func == "vw":
             if arg is not None:
                 value = self.safe.view(arg)
                 print()
                 print(value)
 
-        elif command_func == "clear":
+        elif command_func == "clear" or command_func == "cls":
             os.system('cls||clear')
 
-        elif command_func == "del":
+        elif command_func == "delete" or command_func == "del":
             self.safe.remove(arg)
 
-        elif command_func == "change":
+        elif command_func == "change" or command_func == "ch":
             self.safe.change_password(arg)
 
     def clear_console(self):
