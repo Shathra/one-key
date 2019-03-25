@@ -4,6 +4,10 @@
 
 Command Line Key-Value Storage Application. Stores key-value pairs into a file using AES encryption. Created to practice test driven development.
 
+## Installation
+
+`conda install -c conda-forge --file requirements.txt`
+
 ## Usage
 
 `python onekey.py`
